@@ -1,5 +1,5 @@
 /* Aqui que vamos criar a nossa aplicação principal */
-import express, { json } from "express";
+import express, { json,Request,Response } from "express";
 
 /* importando rota criada para visualizar todos os autores */
 import  autorRouter  from "../livro/routes/autor_routes";
@@ -22,8 +22,16 @@ const port = process.env.PORT || 3000;
 /* Configurando servidor para aceitar requisições json */
 app.use((express.json()));
 
+app.get('/',(req:Request,res:Response) => {
+
+    const resposta = res.json({messagem:"Dretório Raiz"}).status(200);
+    
+    console.log(resposta)
+
+});
+
 // Definindo uma rota HTTP GET usando o métodos get do express
-app.get('/ping', (req,res) => { 
+app.get('/ping', (req:Request,res:Response) => { 
 
     // quando o cliente faz uma requisição GET a função callback é executada
     // o req, res são handler da rota
