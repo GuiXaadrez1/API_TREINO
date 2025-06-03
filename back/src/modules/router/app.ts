@@ -2,14 +2,15 @@
 import express, { json,Request,Response } from "express";
 
 /* importando rota criada para visualizar todos os autores */
-import  autorRouter  from "../livro/routes/autor_routes";
+import rounter from "../livro/routes/autorRoutes";
 
 /* definindo uma variável constante para o materializar o objeto express */
 const app = express();
 
 // definindo umavariável constante para armazenar a porta ao qual o express vai rodar
 
-const port = process.env.PORT || 3000;
+//const port = process.env.PORT || 3000;
+const port = 3000;
 
 /* 
     Ela obtém o valor da porta definida no ambiente. Isso é útil porque permite que
@@ -46,7 +47,7 @@ app.get('/ping', (req:Request,res:Response) => {
 });
 
 /* Configurando express para usar a rota! */
-app.use('/autor',autorRouter)
+app.use('/autor',rounter)
 
 app.listen(port, ():void => {
 

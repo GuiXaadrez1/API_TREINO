@@ -1,6 +1,5 @@
-import { PrismaClient } from "@prisma/client";
-import autorRouter from "../routes/autor_routes";
-
+//import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from "../../../../../prisma/generated/prisma";
 export class AutorPersistence{
 
      private prisma: PrismaClient; 
