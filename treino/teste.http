@@ -1,0 +1,26 @@
+# REQUISIÇÃO POST
+POST http://localhost:8080/rescebendo_mensagem/Olá DEV DEV
+
+# REQUISIÇÃO GET, PUT
+
+### Teste de GET - Buscar usuário pelo ID
+GET http://localhost:3000/atualizar_Moc/1
+Content-Type: application/json
+
+### Teste de PUT - Atualizar dados do usuário 1
+PUT http://localhost:3000/atualizar_Moc/1
+Content-Type: application/json
+
+{
+    "nome": "Carlos Santos",
+    "ativo": false
+}
+
+### Teste de PUT - Atualizar usuário inexistente
+PUT http://localhost:3000/atualizar_Moc/99
+Content-Type: application/json
+
+{
+    "nome": "Usuário Teste",
+    "ativo": true
+}
