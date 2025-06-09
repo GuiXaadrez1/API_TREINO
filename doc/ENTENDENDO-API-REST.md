@@ -1,0 +1,108 @@
+1 - O QUE É A API REST? 
+    
+    REST(Representational State Transfer, que significa Transferência Representacional de Estado) é um modelo de arquitetura e não uma linguagem ou tecnologia de programação, que fornece diretrizes para que os sistemas distribuídos se comuniquem diretamente usando os princípios e protocolos existentes da Web sem a necessidade de SOAP ou outro protocolo sofisticado.
+
+    Aprofundamento: 
+
+        REST (Representational State Transfer) é um estilo arquitetural para sistemas distribuídos, principalmente sistemas web. Ele define princípios e restrições que, se seguidos, tornam uma API simples, escalável, cacheável, desacoplada e baseada em recursos.
+
+        REST não é um protocolo, não é uma biblioteca, não é uma tecnologia — é um conjunto de princípios arquiteturais definidos por Roy Fielding na sua tese de doutorado em 2000.
+
+2 - PRINCÍPIOS FUNDAMENTAIS DA ARQUITETURA REST:
+
+    2.1 - Client-Server (cliente-servidor): 
+    
+        Separação entre front-end e back-end, "desaclopamento". 
+        
+        O cliente apenas consome dados, ou seja, é o componente solicitante de um serviço e envia solicitações para vários tipos de serviços ao servidor. 
+        
+        O servidor processa e gerencia os dados, ou seja, é o componente que é o provedor de serviços e fornece continuamente serviços ao cliente conforme as solicitações
+
+        Nesta arquitetura ou modelo, cliente-servidor ajuda na separação de responsabilidades entre a interface do usuário e o armazenamento de dados. Ou seja, quando uma solicitação REST é realizada, o servidor envia uma representação dos estados que foram requeridos.
+
+        Não há limite superior no número de clientes que podem ser atendidos por um único servidor. Também não é obrigatório que o cliente e o servidor residam em sistemas separados.
+
+        A comunicação entre cliente e servidor ocorre através da troca de mensagens usando um padrão de solicitação-resposta. O cliente basicamente envia uma solicitação de serviço e o servidor retorna uma resposta.
+
+    2.2 - Stateless (sem estado): Cada requisição HTTP é independente. O servidor não armazena contexto entre requisições (ex: login, sessão). Toda informação necessária deve ser enviada em cada requisição.
+
+    2.3 - Cacheable (cacheável): 
+        
+        Respostas podem conter instruções de cache (ex: Cache-Control, ETag). 
+        Reduz carga no servidor e melhora performance no cliente. 
+        Uniform Interface (interface uniforme) Simples, previsível, padronizada.
+        Usa HTTP + URIs + métodos padrão (GET, POST, PUT, DELETE).
+        Cada recurso é identificado por uma URI única.
+        Operações baseadas em representação dos recursos (JSON, XML, etc).
+
+    2.4 - Layered System (sistema em camadas):
+
+        A API pode ser intermediada por proxies, balanceadores, gateways, etc.
+        Cliente não precisa saber se está falando com o servidor final.
+
+    2.5 - Code on Demand (opcional)
+
+        Permite que o servidor envie scripts para o cliente (JS, por exemplo).
+        Pouco utilizado nas APIs REST modernas.
+
+3 - REQUISIÇÕES E COMUNICAÇÕES (COMUNICAÇÃO ENTRE PROCESSOS):
+
+    Na arquitetura REST, a comunicação entre processos é baseada inteiramente no protocolo HTTP, utilizando mensagens request/response entre cliente e servidor. REST não define um mecanismo de comunicação próprio, ele usa o modelo de comunicação já oferecido pela Web (HTTP + URIs), ou sej, a comunicação entre cliente e servidor em REST via HTTP é síncrona por natureza. Mesmo que a comunicação seja síncrona no protocolo HTTP, o código cliente pode usar chamadas assíncronas, como Promise, async/await, callbacks, etc., para não travar a execução da aplicação.
+
+    O REST precisa que um cliente faça uma requisição para o servidor para enviar ou modificar dados. Um requisição consiste em:
+
+    Um verbo ou método HTTP, que define que tipo de operação o servidor vai realizar;
+    
+    Um header, com o cabeçalho da requisição que passa informações sobre a requisição;
+    
+    Um path (caminho ou rota) para o servidor, como por exemplo:
+     
+        https://github.com/GuiXaadrez1/API_TREINO
+    
+    Informação no corpo da requisição, sendo esta informação opcional.
+
+    PONTOS IMPORTANTES SOBRE A COMUNICAÇÃO:
+
+        Assíncrona do ponto de vista do servidor: cada requisição é independente.
+
+        Stateless: o servidor não mantém estado entre as requisições. Toda informação de contexto precisa estar em cada requisição (ex: tokens de autenticação).
+
+        Sem acoplamento direto: cliente e servidor são acoplados apenas via contrato HTTP (URI, headers, verbos, formato dos dados).
+
+        Baseada em recursos: tudo o que é manipulado tem um “endereço” único (URI).
+
+        Camadas intermediárias possíveis: pode haver proxies, gateways, caches, load balancers — o cliente não vê isso.
+
+
+4 - MÉTODOS HTTP NO REST:
+
+    Em aplicação REST, os métodos mais utilizados são:
+
+        O método GET -> é o método mais comum, geralmente é usado para solicitar que um servidor envie um recurso;
+        
+        O método POST -> foi projetado para enviar dados de entrada para o servidor. Na prática, é frequentemente usado para suportar formulários HTML;
+        
+        O método PUT -> edita e atualiza documentos em um servidor;
+        
+        O método DELETE ->  que como o próprio nome já diz, deleta certo dado ou coleção do servidor.
+
+
+5 - CÓDIGOS DE RESPOSTAS DO SERVIDOR (STATUS):
+
+    Cada resposta que a aplicação REST retorna, é enviado um código definindo o status da requisição. Por exemplo:
+
+        200 (OK), requisição atendida com sucesso;
+
+        201 (CREATED), objeto ou recurso criado com sucesso;
+
+        204 (NO CONTENT), objeto ou recurso deletado com sucesso;
+
+        400 (BAD REQUEST), ocorreu algum erro na requisição (podem existir inumeras causas);
+
+        404 (NOT FOUND), rota ou coleção não encontrada;
+
+        500 (INTERNAL SERVER ERROR), ocorreu algum erro no servidor.
+
+
+6 - FONTES:
+    https://www.alura.com.br/artigos/rest-conceito-e-fundamentos

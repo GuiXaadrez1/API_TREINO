@@ -7,7 +7,7 @@ import rounter from "../livro/routes/autorRoutes";
 /* definindo uma variável constante para o materializar o objeto express */
 const app = express();
 
-// definindo umavariável constante para armazenar a porta ao qual o express vai rodar
+// definindo uma variável constante para armazenar a porta ao qual o express vai rodar
 
 //const port = process.env.PORT || 3000;
 const port = 3000;
@@ -54,6 +54,6 @@ app.listen(port, ():void => {
     let menssager:string = "Server rodando na porta: "+port;
     console.log(menssager)
 
-    console.log('Teste1, Teste2')
+    //console.log('Teste1, Teste2')
 
 } )

@@ -7,7 +7,10 @@ import { json,Request,Response } from "express";
 /* Fazendo a exportação do Service para os Routes */
 import { AutorService } from "../service/AutorService";
 
+// materializando um objeto Router da class Router
 const rounter:Router = Router();
+
+// materializando um objeto AutoService da class AutoService
 const autorService:AutorService = new AutorService;
 
 
@@ -73,6 +76,7 @@ rounter.delete('/deletar_autor/:id', async (req:Request,res:Response)=>{
    res.status(200).send("Autor deletado com sucesso!")
 });
 
+/* exportando o rounter */
 export default rounter;
 
 /*
