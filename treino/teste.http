@@ -24,3 +24,15 @@ Content-Type: application/json
     "nome": "Usuário Teste",
     "ativo": true
 }
+
+
+# REQUISIÇÃO POST PARA ENVIAR DADOS AO express2
+
+### Criar novo dado
+POST http://localhost:5065/criar-dados
+Content-Type: application/json
+
+{
+   "id": 100,
+   "nome": "GuiBD10"
+}

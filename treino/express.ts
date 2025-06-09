@@ -1,14 +1,25 @@
+/* 
+
+    Antes o que era feito na mão com a lib nativa http pode ser simplificada 
+    e mais produtiva com a lib express, que simula um servidor local para aplicações
+    web 
+
+*/
+
 /* IMPORTANDO A LIB Lib EXPRESS */
 import express,{Express,Request,response,Response} from 'express'; 
 
 /*
- QUANDO COLOCAMOS {}, TODAS AS FUNÇÕES, MÓDULOS, ATRIBUTOS, CLASSES QUE ESTÃO DENTRO DE CHAVES, ESTAMOS IMPORTANDO
+ 
+    QUANDO COLOCAMOS {}, TODAS AS FUNÇÕES, MÓDULOS, ATRIBUTOS, CLASSES QUE ESTÃO 
+    DENTRO DE CHAVES, ESTAMOS IMPORTANDO.
  
 */
 
 /*
 
-    QUANDO IMPORTAMOS  SEM O {} E O QUE QUEREMOS DENTRO DAS CHAVES, ESTAMOS APENAS EXPORTANDO A FUNCIONALIDADE PRINCIPAL
+    QUANDO IMPORTAMOS  SEM O {} E O QUE QUEREMOS DENTRO DAS CHAVES, ESTAMOS
+    APENAS IMPORTANDO A FUNCIONALIDADE PRINCIPAL
     DO EXPRESS, QUE NO CASO É UMA FUNÇÃO QUE CRIA UM SERVIDOR LOCAL
 
 */
