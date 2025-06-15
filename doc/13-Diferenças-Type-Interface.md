@@ -6,17 +6,17 @@
 
 
 ┌──────────────────────┬────────────────────────────────┬──────────────────────────────┐
-│ Aspecto             │ interface                      │ type                         │
+│ Aspecto             │ interface                      │ type                          │
 ├──────────────────────┼────────────────────────────────┼──────────────────────────────┤
-│ Uso principal       │ Estrutura de objetos           │ Objetos + Tipos complexos    │
-│ Extensibilidade     │ `extends`                      │ `&` (interseção)             │
-│ Declaração múltipla │ Sim                            │ Não                          │
-│ União de tipos      │ Não                            │ Sim (`|`)                    │
+│ Uso principal       │ Estrutura de objetos           │ Objetos + Tipos complexos     │
+│ Extensibilidade     │ `extends`                      │ `&` (interseção)              │
+│ Declaração múltipla │ Sim                            │ Não                           │
+│ União de tipos      │ Não                            │ Sim (`|`)                     │
 └──────────────────────┴────────────────────────────────┴──────────────────────────────┘
 ┌────────────┬──────────────────────────┬──────────────────────┐
 │ Método    │ Exemplo com interface     │ Exemplo com type     │
 ├────────────┼──────────────────────────┼──────────────────────┤
-│ Extensão  │ `interface A extends B`  │ `type A = B & {...}` │
+│ Extensão   │ `interface A extends B`  │ `type A = B & {...}` │
 └────────────┴──────────────────────────┴──────────────────────┘
 
 

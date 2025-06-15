@@ -722,11 +722,11 @@
                 O ...valores espalha os elementos do array como parâmetros da função soma.
 
 
-    O que é desestruturação ([] ou {})?
+    O que é destruturação ([] ou {})?
 
         A desestruturação é usada para extrair valores de arrays ou objetos e armazená-los diretamente em variáveis.
 
-        Desestruturação de arrays:
+        Destruturação de arrays:
             
             const numeros = [0, 2, 3];
 
