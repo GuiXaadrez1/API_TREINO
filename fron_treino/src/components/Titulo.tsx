@@ -97,139 +97,122 @@ export default Titulo;
 
 
 /*
-    RELATÓRIO DETALHADO DESTE CÓDIGO:
+    
+RELATÓRIO DETALHADO DESTE CÓDIGO:
 
 
-    1–3. Importações essenciais
-ts
-Copiar
-Editar
+1–3. Importações essenciais
+
 import { JSX } from "react";
-Importa o tipo JSX do React, usado para tipar corretamente componentes que retornam elementos JSX.
 
-ts
-Copiar
-Editar
+Importa o tipo JSX do React, usado para tipar corretamente componentes que retornam 
+elementos JSX.
+
 import grafico from '../assets/imgem_ale.png';
 import pikachu from '../assets//Pokemon.png';
-Importa duas imagens locais do projeto para uso no componente. Cada importação atribui um caminho de imagem a uma variável.
 
-ts
-Copiar
-Editar
+Importa duas imagens locais do projeto para uso no componente. 
+Cada importação atribui um caminho de imagem a uma variável.
+
 import styled from "styled-components";
 Importa a função styled da biblioteca styled-components, que permite criar componentes com estilos CSS encapsulados, diretamente no JavaScript/TypeScript.
 
 7–15. Tipagem com Interface
-ts
-Copiar
-Editar
+
 interface TituloProps {
   imagem?: string;
   children?: React.ReactNode;
 }
-Define a interface TituloProps, que representa os tipos esperados das props do componente Titulo.
 
-imagem?: string indica que o prop imagem é opcional e deve ser uma string (ex: nome da imagem).
+Define a interface TituloProps, que representa os tipos esperados das props do 
+componente Titulo.
 
-children?: React.ReactNode também é opcional e representa o conteúdo JSX que será inserido dentro do componente.
+imagem?: string indica que o prop imagem é opcional e deve ser uma string 
+(ex: nome da imagem).
 
-ts
-Copiar
-Editar
+children?: React.ReactNode também é opcional e representa o conteúdo JSX que será inserido 
+dentro do componente.
+
 interface IImagens {
   pikachu: string;
   grafico: string;
 }
-Define a interface IImagens usada para mapear as imagens importadas para uso dinâmico no componente.
+
+Define a interface IImagens usada para mapear as imagens importadas para uso dinâmico
+no componente.
 
 18–25. Componente estilizado: Span
-ts
-Copiar
-Editar
+
 const SpanEstilizado = styled.span<TituloProps>`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  witdh: 25 px;
+  withh: 25 px;
   height: 25px;
   background-image: ${Titulopros => Titulopros.imagem ? `url(${Titulopros.imagem})` : 'none'}
 `;
+
 Cria um componente span estilizado com base nas props de TituloProps.
 
-Define um background-image condicional baseado na prop imagem. Se a imagem for passada, aplica a URL, senão define como none.
+Define um background-image condicional baseado na prop imagem. Se a imagem for passada,
+aplica a URL, senão define como none.
 
-⚠️ Correção necessária: witdh → width.
 
 27–29. Componente estilizado: Título
-ts
-Copiar
-Editar
+
 const TituloEstilizado = styled.h2`
   color: #FFA500;
 `;
+
 Define um título h2 estilizado com a cor laranja (#FFA500).
 
 31–34. Componente estilizado: Container
-ts
-Copiar
-Editar
+
 const ConteinerEstilizado = styled.div`
   background-color: #000;
   display: flex;
   align-items: center;
 `;
-Define um div container com fundo preto e alinhamento horizontal com centralização vertical.
 
-⚠️ Correção necessária: align - items → align-items.
+Define um div container com fundo preto e alinhamento horizontal com centralização
+vertical.
 
 37–47. Componente principal: Titulo
-ts
-Copiar
-Editar
+
 const Titulo = ({ imagem, children }: TituloProps): JSX.Element => {
 Componente funcional Titulo, usando arrow function e tipagem explícita de props.
 
-ts
-Copiar
 Editar
   const ListaImagens: IImagens = {
     pikachu: pikachu,
     grafico: grafico
   };
-Cria um objeto ListaImagens que associa nomes simbólicos (pikachu, grafico) às imagens importadas.
 
-ts
-Copiar
-Editar
-  return (
+Cria um objeto ListaImagens que associa nomes simbólicos (pikachu, grafico) às imagens
+importadas.
+
+return (
     <ConteinerEstilizado>
       {imagem && <SpanEstilizado imagem={ListaImagens[imagem as keyof IImagens]} />}
       <TituloEstilizado>{children}</TituloEstilizado>
     </ConteinerEstilizado>
   );
 };
+
 Estrutura JSX que define o retorno visual do componente.
 
-Se imagem estiver definida, exibe o SpanEstilizado com a imagem correspondente do objeto ListaImagens.
+Se imagem estiver definida, exibe o SpanEstilizado com a imagem correspondente do objeto
+ListaImagens.
 
 O conteúdo (children) é exibido dentro do h2.
 
 49. Exportação padrão
-ts
-Copiar
-Editar
+
 export default Titulo;
-Exporta o componente Titulo como exportação padrão, permitindo sua importação por outros arquivos com:
+
+Exporta o componente Titulo como exportação padrão, permitindo sua importação por
+outros arquivos com:
 
 import Titulo from './caminho/Titulo';
-✅ Correções Recomendadas
-width foi escrito como witdh — corrigir.
-
-align - items tem espaço extra — deve ser align-items.
-
-background-image dentro do styled-component está faltando ::
-
-background-image: ${...}
     
 */

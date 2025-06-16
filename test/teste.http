@@ -1,0 +1,32 @@
+### Visualizar todos os autores
+GET http://localhost:3000/autor/listar_autores
+
+###
+
+### Visualizar autor por ID
+GET http://localhost:3000/autor/visualizar_autor/2
+
+###
+
+### Inserir autor
+POST http://localhost:3000/autor/registrar_autor
+Content-Type: application/json
+
+{
+  "nome": "Pinto Pito"
+}
+
+###
+
+### Atualizar autor
+PUT http://localhost:3000/autor/atualizar_autor/6
+Content-Type: application/json
+
+{
+  "nome": "Sussurana"
+}
+
+###
+
+### Deletar autor
+DELETE http://localhost:3000/autor/deletar_autor/7
