@@ -1,0 +1,7 @@
+
+# ignorando arquivos 
+*.env
+.env
+/node_modules/
+package-lock.json
+/generated/prisma
